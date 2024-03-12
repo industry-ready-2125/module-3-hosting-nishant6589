@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>OrderNow</title>
+        <link rel="icon" href="images/logo1.jpg">
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo1.jpg"
+                           height="75px" width="100px" alt="website logo"></a>
+                </div>
+                <nav>
+                    <ul id="Menuitem">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="page02.html">RESTAURANTS</a></li>
+                        <li><a href="">CONTACT</a></li>
+                        <li><a href="#">ACCOUNT</a></li>
+                    </ul>
+                </nav>
+                <a href="page03.html"><img src="images/cart.png" width="30px"
+                        height="30px" alt="cart image"></a>
+                <img src="images/menu.png" class="menu-icon"
+                    onclick="menutoggle()">
+            </div>
+        </div>
+        <div class="account-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="images/food1.png" width="100%">
+                    </div>
+                    <div class="col-2">
+                        <div class="form-container">
+                            <div class="form-btn">
+                                <span onclick="login()">Login</span>
+                                <span onclick="register()">Register</span>
+                                <hr id="indicator">
+                            </div>
+                            <form id="loginform">
+                                <input type="text" placeholder="username">
+                                <input type="password" placeholder="password">
+                                <button type="submit" class="btn"><a href="restaurants.html">Login</a></button>
+                                <a href="">Forget password</a>
+                            </form>
+                            <form id="registerform">
+                                <input type="text" placeholder="username">
+                                <input type="email" placeholder="email">
+                                <input type="password" placeholder="password">
+                                <button type="submit" class="btn">Register</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        var loginform = document.getElementById("loginform");
+        var registerform = document.getElementById("registerform");
+        var indicator =document.getElementById("indicator");
+        function register(){
+            registerform.style.transform = "translateX(0px)"
+            loginform.style.transform = "translateX(0px)"
+            indicator.style.transform = "translateX(100px)"
+        }
+        function login(){
+            
+            registerform.style.transform = "translateX(300px)"
+            loginform.style.transform = "translateX(300px)"
+            indicator.style.transform = "translateX(0px)"
+        }
+        var Menuitems = document.getElementById("Menuitem");
+        Menuitem.style.maxHeight="0px";
+        function menutoggle(){
+            if(Menuitem.style.maxHeight=="0px"){
+                Menuitem.style.maxHeight="200px";
+            }
+            else{
+                Menuitem.style.maxHeight="0px";
+            }
+        }
+    </script>
+        
+    </body>
+</html>
